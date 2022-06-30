@@ -75,7 +75,7 @@ function drawElectron() {
   if (previousOrbit != currentOrbit) {
     waveLength = sophisticatedCalculations(previousOrbit, currentOrbit);
   }
-  angle += angleStep;
+  angle += angleStep * Math.sqrt(currentOrbit);
   x = CENTER_X + cos(angle) * radius * currentOrbit;
   y = CANVAS_HEIGHT/2 + sin(angle) * radius * currentOrbit;
   fill(0, 0, 255);
