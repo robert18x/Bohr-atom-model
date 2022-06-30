@@ -47,11 +47,12 @@ function draw() {
   textSize(15);
   text('Numer orbity: ' + orbitSlider.value(), 10, 50);
   if (waveLength != undefined) {
-   if (waveLength > 0) {
-    text('Długość wyemitowanej fali: ' + waveLength + ' nm', 10, 690);
-   } else {
-    text('Max długość potrzebnej fali: ' + -1*waveLength + ' nm', 10, 690);
-   }
+    let wl = Math.abs(waveLength * 10e9).toFixed(2);
+    if (waveLength > 0) {
+      text('Długość wyemitowanej fali: ' + wl + ' nm', 10, 690);
+    } else {
+      text('Max długość potrzebnej fali: ' + wl + ' nm', 10, 690);
+    }
   }
 }
 
